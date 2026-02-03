@@ -1,0 +1,368 @@
+:root {
+    --main-red: #f33;
+    --dark-red: #e00;
+    --light-red: #f55;
+    --dark: #222;
+    --light-dark: #333;
+    --lighter-dark: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+*:focus {
+    outline: .2rem dashed var(--main-red);
+    outline-offset: .2rem;
+}
+
+body {
+    font-family: calibri;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+body::-webkit-scrollbar {
+    width: .8rem;
+    background-color: var(--light-dark);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--main-red);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--light-red);
+}
+
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+#background-wrap {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url(./imgs/code-snip.jpg);
+    display: flex;
+}
+
+#background-wrap::after {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(#0000 0%, #000f 100%);
+}
+
+#to-top-btn {
+    position: fixed;
+    border-radius: 100%;
+    bottom: .5rem;
+    right: .5rem;
+    box-shadow: 0 0 5px black;
+    transition-property: scale, opacity;
+    transition-duration: .2s;
+    z-index: 2;
+    opacity: .2;
+}
+
+#to-top-btn:hover {
+    scale: 1.1;
+    opacity: 1;
+}
+
+#to-top-btn a {
+    display: block;
+    display: flex;
+    width: fit-content;
+    border-radius: 100%;
+    outline-offset: .2rem;
+    background-color: var(--main-red);
+    padding: .2rem;
+}
+
+#to-top-btn svg {
+    width: 2rem;
+    aspect-ratio: 1;
+    fill: white;
+}
+
+#first-wrap {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    min-width: fit-content;
+    margin: 0 auto;
+    padding: .5rem;
+    background-color: var(--light-dark);
+    border-radius: 0 0 .5rem .5rem;
+    transition-property: translate;
+    transition-duration: .5s;
+}
+
+#logo-wrap {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#logo-wrap svg {
+    height: 3rem;
+    fill: white;
+}
+
+#header-links {
+    display: flex;
+    margin-left: 1rem;
+}
+
+#header-links a {
+    text-decoration: none;
+    background-color: var(--dark);
+    font-size: 1.1rem;
+    padding: .5rem;
+    border-radius: .2rem;
+    font-weight: bold;
+    transition-property: background-color;
+    transition-duration: .2s;
+    color: white;
+    text-wrap: nowrap;
+}
+
+#header-links a:hover {
+    background-color: var(--main-red);
+}
+
+#header-links a:not(:last-of-type) {
+    margin-right: .5rem;
+}
+
+#introduction {
+    background-color: var(--main-red);
+    flex: 1 1 auto;
+    margin: 1.5rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+body > hr, #footer hr {
+    width: 50%;
+    margin: .5rem auto;
+    border: .2rem dashed var(--lighter-dark);
+}
+
+#about-wrap,
+#projects-wrap {
+    margin: 1rem auto;
+}
+
+#about-wrap,
+#projects-wrap {
+    width: 90%;
+    background-color: var(--light-dark);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#about-head,
+#projects-wrap>div:first-of-type {
+    padding: .2rem;
+    background-color: var(--lighter-dark);
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 0 0 .5rem .5rem;
+}
+
+#about-wrap {
+    max-width: 50rem;
+}
+
+#about-body {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+#about-body > p:first-of-type {
+    text-align: center;
+}
+
+#skills-wrap {
+    background-color: var(--lighter-dark);
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+#skills-wrap, #about-body > p:last-of-type {
+    margin-top: 1.5rem;
+}
+
+#about-body li {
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+#about-body p:last-of-type a {
+    color: white !important;
+}
+
+#cards-wrap {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    --border-radius: 1rem;
+    width: 90%;
+    max-width: 20rem;
+    height: 30rem;
+    margin: 1rem;
+    background-color: var(--dark);
+    border-radius: var(--border-radius);
+    transition-property: scale;
+    transition-duration: .2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    scale: 1.05;
+}
+
+.card a {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.card img, .card video {
+    flex: 1 1 auto;
+    object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.card video {
+    display: none;
+}
+
+.video-card video {
+    display: initial;
+}
+
+.video-card img {
+    display: none;
+}
+ 
+.card-description {
+    width: 100%;
+    bottom: 0;
+    background-color: var(--main-red);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: .5rem;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+#footer {
+    width: 70%;
+    min-width: fit-content;
+    border-radius: .5rem .5rem 0 0;
+    background-color: var(--light-dark);
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: .5rem;
+}
+
+#links-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#links-wrap a {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    aspect-ratio: 1;
+    justify-content: center;
+    margin: 0 .2rem;
+}
+
+#links-wrap a svg {
+    fill: white;
+    width: 2.5rem;
+    transition-property: translate, fill;
+    transition-duration: .2s, .2s;
+}
+
+#links-wrap a:hover svg {
+    fill: var(--main-red);
+    translate: 0 -.2rem;
+}
+
+#footer hr {
+    display: none;
+    margin: 1rem auto;
+}
+
+#nums-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: monospace;
+    padding: .2rem 0;
+}
+
+#nums-wrap > div {
+    z-index: 1;
+}
+
+#nums-wrap svg {
+    position: absolute;
+    height: 100%;
+    fill: var(--dark);
+}
+
+@media (max-width: 550px) {
+    #footer {
+        flex-direction: column;
+    }
+
+    #footer hr {
+        display: initial;
+    }
+}
