@@ -37,7 +37,7 @@ const projects = [
     new Project("Audio Cutter", "./imgs/audio-cutter.JPG", "https://m9-gbr.github.io/audio-cutter/"),
     new Project("Clock", "./imgs/clock.JPG", "https://m9-gbr.github.io/web-clock"),
     new Project("Sign-Up / Log-In Page", "./imgs/sign-up_log-in.JPG", "https://m9-gbr.github.io/forms-project/sign-in"),
-    new Project("Matrix Wizard", "./imgs/mat_w.jpg", "https://m9-gbr.github.io/matrix-wizard")
+    new Project("Matrix Wizard", "./imgs/mat_w.JPG", "https://m9-gbr.github.io/matrix-wizard")
 ]
 
 let card = document.getElementsByClassName("card")[0]
